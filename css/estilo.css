@@ -1,0 +1,13 @@
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+table td {
+	background-color: #25cc1c;
+  border: 5;
+}
