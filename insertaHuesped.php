@@ -7,7 +7,7 @@ $insertHuesped = "INSERT INTO `huespedes` (`NombreC`, `telefono`, `estatus`) VAL
 //echo $insertHuesped;
 $con->query($insertHuesped);
 
-echo "El Huesped se a agregado exitosamente a la Base de Datos";
+echo "<script>alert(El Huesped se a agregado exitosamente a la Base de Datos);</script>";
 
 header('Location: huespedes.php');
  ?>
