@@ -19,6 +19,15 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
 button {
     background-color: #189b35;
     color: white;
@@ -82,4 +91,23 @@ ul li a{
   text-decoration: none;
   background-color: #189b35;
 
+}
+
+table {
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+table th {
+  width: 100%;
+  border:1 solid #f1f1f1;
+  background-color: #5c8400;
+}
+table td {
+  width: 100%;
+  border:1 solid #f1f1f1;
+  background-color: #7aad05;
+}
+table form {
+  border: 0px;
 }
