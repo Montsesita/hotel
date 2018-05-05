@@ -28,6 +28,9 @@
           <a href="habitaciones.php" target="i_contenido">Habitaciones</a>
         </li>
         <li>
+          <a href="promociones.php" target="i_contenido">Promociones</a>
+        </li>
+        <li>
           <a href="#">Bienvenido: <?php session_start(); echo $_SESSION['NombreUsu']; ?></a>
         </li>
         <li>
