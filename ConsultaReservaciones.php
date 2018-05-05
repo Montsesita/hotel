@@ -15,18 +15,18 @@
   <tbody>
 <?php
 include 'conectaDB.php';
-$consulta = "SELECT r.folio, r.idhabitacion, ha.Nombre, r.idhuesped, he.NombreC, r.fecha_entrada, r.fecha_salida, r.pXh FROM registro r, huespedes he, habitaciones ha WHERE r.idhabitacion = ha.idhabitacion and r.idhuesped = he.idhuesped";
+$consulta = "SELECT r.folio, r.idhabitacion, ha.Nombre, r.idhuesped, he.NombreC, r.fecha_entrada, r.fecha_salida, r.pXh FROM registro r, huespedes he, habitaciones ha WHERE r.idhabitacion = ha.idhabitacion and r.idhuesped = he.idhuesped and r.fecha_salida is null";
 if ($resultado = mysqli_query($con, $consulta)) {
     while ($fila = mysqli_fetch_row($resultado)) {
       $folio = '<center>'.$fila[0].'</center>';
-      $IdHabitacion = '<center>'.$fila[1].'</center>';
+      $IdHabitacion = $fila[1];
       $NombreHabitacion = '<center>'.$fila[2].'</center>';
-      $IdHuesped = '<center>'.$fila[3].'</center>';
+      $IdHuesped = $fila[3];
       $NombreHuesped = '<center>'.$fila[4].'</center>';
       $FecEntrada = '<center>'.$fila[5].'</center>';
       $FecSalida = '<center>'.$fila[6].'</center>';
       $perXhab = '<center>'.$fila[7].'</center>';
-    echo "<tr><td>".$folio."</td><td>".$NombreHabitacion."</td><td>".$NombreHuesped."</td><td>".$FecEntrada."</td><td>".$perXhab."</td><td><form action='Salida.php'><button type='submit'>Dar Salida</button></form></td></tr>";
+    echo "<tr><td>".$folio."</td><td>".$NombreHabitacion."</td><td>".$NombreHuesped."</td><td>".$FecEntrada."</td><td>".$perXhab."</td><td><a href='Salida.php?IdHab=".$IdHabitacion."&IdHues=".$IdHuesped."' type='button'>Dar Salida</a></td></tr>";
     }
 }
 ?>
@@ -50,9 +50,16 @@ if ($resultado = mysqli_query($con, $consulta)) {
   <input id="telefono" name="telefono" type="text" placeholder="Télefono">
   </div>
 </div>
+<div>
+    <label for="perXhab">Personas X Habitación</label>
+  <div>
+  <input id="perXhab" name="perXhab" type="text" placeholder="Personas por
+Habitación.">
+  </div>
+</div>
 
 <div>
-  <label for="habitacion">Estatus</label>
+  <label for="habitacion">Habitacion</label>
   <div>
     <select id="habitacion" name="habitacion">
       <option value="">Seleccione una Habitación</option>

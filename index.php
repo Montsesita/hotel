@@ -16,13 +16,13 @@
     <div>
       <ul id="menu">
         <li >
-          <a  href="#">Inicio</a>
+          <a  href="ConsultaReservaciones.php" target="i_contenido">Inicio</a>
         </li>
         <li>
-          <a href="#">Habitaciones</a>
+          <a href="habitaciones.php" target="i_contenido">Habitaciones</a>
         </li>
         <li>
-          <a href="#">Huespedes</a>
+          <a href="huespedes.php" target="i_contenido">Huespedes</a>
         </li>
         <li>
           <a href="#">Registro</a>
@@ -31,7 +31,7 @@
           <a href="#">Bienvenido: <?php session_start(); echo $_SESSION['NombreUsu']; ?></a>
         </li>
         <li>
-          <a href="#">Cerrar Sesión</a>
+          <a href="login.php"><?php session_destroy(); ?>Cerrar Sesión</a>
         </li>
       </ul>
     </div>
@@ -46,9 +46,9 @@
       $fecha= $hoy['month']." ".$hoy['mday'].", ".$hoy['year']." ".$hoy['hours'].":".$hoy['minutes'];
       echo "<p>".$fecha."</p>";
       ?>
-      <hr>      
+      <hr>
     </div>
-    <iframe src="" width="90%" height="90%" name="i_contenido"></iframe>
+    <iframe src="ConsultaReservaciones.php" width="100%" height="1000px" name="i_contenido"></iframe>
   </div>
 
   <footer>
