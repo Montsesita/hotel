@@ -83,7 +83,7 @@ if ($resultado = mysqli_query($con, $consulta)) {
       <option value="">Seleccione un Huesped</option>
       <?php
       include 'conectaDB.php';
-      $consulta = "SELECT idhuesped, NombreC from huespedes";
+      $consulta = "SELECT idhuesped, NombreC from huespedes WHERE estatus = 1";
       if ($resultado = mysqli_query($con, $consulta)) {
           while ($fila = mysqli_fetch_row($resultado)) {
             $idhuesped = $fila[0];
