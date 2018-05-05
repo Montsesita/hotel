@@ -19,13 +19,13 @@
           <a  href="ConsultaReservaciones.php" target="i_contenido">Inicio</a>
         </li>
         <li>
-          <a href="habitaciones.php" target="i_contenido">Habitaciones</a>
+          <a href="ConsultaReservaciones.php" target="i_contenido">Registro</a>
         </li>
         <li>
           <a href="huespedes.php" target="i_contenido">Huespedes</a>
         </li>
         <li>
-          <a href="#">Registro</a>
+          <a href="habitaciones.php" target="i_contenido">Habitaciones</a>
         </li>
         <li>
           <a href="#">Bienvenido: <?php session_start(); echo $_SESSION['NombreUsu']; ?></a>
