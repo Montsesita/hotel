@@ -1,5 +1,5 @@
 <link href="css/estilo.css" rel="stylesheet">
-<h1> Promociones </h1>
+<h1> Promociones Activas </h1>
 
 <table >
   <thead>
@@ -26,9 +26,39 @@ if ($resultado = mysqli_query($con, $consulta)) {
 ?>
   </tbody>
 </table>
+<hr>
+<br>
+<h1> Promociones Canjeadas</h1>
+
+<table >
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Promoción</th>
+      <th>Huesped</th>
+
+    </tr>
+  </thead>
+  <tbody>
+<?php
+include 'conectaDB.php';
+$consulta = "SELECT p.idpromocion, p.Desc_promo, p.promo,h.NombreC FROM promociones p, huespedes h where p.estatus =2 and p.idhuesped = h.idhuesped";
+if ($resultado = mysqli_query($con, $consulta)) {
+    while ($fila = mysqli_fetch_row($resultado)) {
+      $idpromocion = $fila[0];
+      $Desc_promo = $fila[1];
+      $promo = $fila[2];
+      $IdHuesped = $fila[3];
+    echo "<tr><td>".$Desc_promo."</td><td>".$promo."</td><td>".$IdHuesped."</td></tr>";
+    }
+}
+?>
+  </tbody>
+</table>
+
 
 <br>
-<br>
+<hr>
 
 <form action="insertaPromo.php" method="post">
 <h1>Alta de Promociones</h1>
