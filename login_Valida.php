@@ -6,7 +6,7 @@ $Passwd =  $_POST['pss'];
 //echo "<br>Pass: ".$Passwd;
 if(isset($Usuario) and isset($Passwd)){
   //echo "Estoy en el if :D";
-  //session_start();
+  session_start();
   $consulta = "SELECT NombreC FROM usuarios WHERE usuario LIKE '".$Usuario."' AND pass LIKE '".$Passwd."'";
   if ($resultado = mysqli_query($con, $consulta)) {
       $fila = mysqli_fetch_row($resultado);
